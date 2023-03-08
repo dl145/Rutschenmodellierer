@@ -1,0 +1,186 @@
+\documentclass[ngerman, a4paper, 11pt]{article}  
+\usepackage{pgfplots}
+\usepackage[german]{babel}
+\usepackage{geometry,lipsum}% http://ctan.org/pkg/{geometry,lipsum}
+\usepackage{babel}
+\usepackage{siunitx}  
+\sisetup{locale = DE}
+\usepackage{pgfplots}
+\usepackage{geometry,lipsum}
+\geometry{margin=1in}
+\usepackage{enumitem, amsmath, amssymb}
+
+% default
+\geometry{margin=1in}% 1in margin
+%\geometry{margin=1cm}% 1cm margin
+
+
+
+
+\begin{document}
+
+\begin{center}
+    \huge \bf{Rutschenmodellierer}\\
+    \footnotesize{Aufgabe erstellt von Jonas, Paul, Dominik}
+\end{center}
+
+\vspace{1.5cm}
+
+Die beliebteste Attraktion der Stadt Bielefeld im Sommer,
+wenn die Temperatur über 30°C liegt,
+ist die Rutsche im Südschwimmbad.
+Der Bademeister Jochen Jürgen hat sich aus Langeweile
+aufgrund der wenigen Kundschaft in den Morgenstunden eine Funktion $r$ überlegt,
+die im zweiten Quadranten eines kartesischen Koordinatensystems den Längenquerschnitt der Rutsche modelliert.
+Die Modellierung besteht hier aus der hochmodernen, harmonisch geformten Treppe links
+und der eigentlichen Rutschbahn rechts.
+Von der Baufirma des Auffangbeckens \textit{Schwimmbecken Liebreich GmbH}
+hat er außerdem die Modellierung dieses Beckens mit der Funktion $b$ erhalten:
+
+$$r(x) = -0,1x^4 - 0,5x^3 - 0,1x^2$$
+$$b(x) = 0,2x^2 - 5$$
+
+Die Funktion $b$ ist dabei so modelliert, dass sie den Boden hinter der Rutsche im vierten Quadranten (ebenfalls im Querschnitt) anzeigt.
+Die beiden Funktionen stellen nun jede Koordinaten-Einheit als einen realen Meter dar.
+Bevor er es versehentlich auf den Boden fallengelassen und es völlig durchnässt wurde,
+hatte Herr Jürgen außerdem einen selbstgezeichneten Plot seiner beiden Funktionen auf einem Papier:
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis lines = middle,
+            xlabel = $x$,
+            ylabel = $y$,
+            xmin=-6.5, xmax=6.5,
+            ymin=-6.5, ymax=6.5,
+        ]
+            \addplot [domain=-6.5:6.5, samples=100, color=blue]{-0.1*x^4 -0.5*x^3 -0.1*x^2};
+            \addlegendentry{\(r\)}
+            \addplot [domain=-6.5:6.5, samples=100, color=red]{0.2*x^2 -5};
+            \addlegendentry{\(b\)}
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+Als der Schwimmmeister ein paar Jugendliche über ihre Lehrkräfte diskutieren hört,
+erinnert er sich an seine Schulzeit und die anwendungsbezogenen Aufgaben des Mathematik-Unterrichts.
+Schnell erstellt er eine Liste an Aufgaben. Lösen Sie die folgenden Aufgaben!
+
+\begin{enumerate}
+    \item[a)]
+        \begin{enumerate}
+            \item[(i)]
+                \textit{Beschreiben Sie die Eigenschaft des Graphen von $r$ an der Stelle, wo die Rutsche am steilsten ist. (Hinweis: Von Reibung und Gewicht des Rutschenden kann abgesehen werden.)}
+            \item[(ii)]    
+                \textit{Bestimmen Sie rechnerisch die Länge und die maximale Tiefe des Auffangbeckens.}
+            \item[(ii)]
+                \textit{Berechnen Sie den Wasseroberflächeninhalt unter der Annahme,
+                dass das Becken im dreidimensionalen Raum mit einer hinzugedachten $z$-Achse,
+                die senkrecht zu den $x$- und $y$-Achsen steht, rotationssymmetrisch zur $y$-Achse ist.
+                Die Oberfläche des Beckens ist in diesem Gedankenbild also halbkreisförmig und liegt an der $z$-Achse.
+                Schätzen Sie außerdem begründet die nächste ganze Zahl ab, die dem berechneten Wert am nächsten liegt.\\
+                (Zur Kontrolle: Der Oberflächeninhalt des Beckens beträgt circa $\SI{39}{\square\metre}$.)}
+        \end{enumerate}
+        \begin{flushright}
+            (1 + 3 + 3 Punkte)
+        \end{flushright}
+    \item[b)]
+        \begin{enumerate}
+            \item[(i)]
+                \textit{Ermitteln Sie rechnerisch die Nullstellen
+                sowie die Koordinaten und die Art der Extrem- und Wendepunkte von $r$ und $b$
+                und zeigen Sie, dass es sich bei der Wendestelle um eine Sattelstelle handelt.}
+            \item[(ii)]
+                \textit{Erklären Sie die Bedeutung aller in b)(i) berechneten Stellen im Sachzusammenhang.}
+        \end{enumerate}
+\end{enumerate}
+
+Da Jürgens Vorgesetzter bei seinem letzten Rundgang auf den großzügigen Raum unter der Rutsche aufmerksam geworden ist,
+schlägt er vor, dort Brennholz für die altmodische Wasser-Beheizungsanlage zu verstauen.
+Dem Bademeister wurde so die Aufgabe deligiert, eine Schätzung für den vorhandenen Raum unter der Rutsche abzugeben.
+Die besondere Rutsche hat am Fuß der Leiter eine Breite von lediglich einem Meter und wird linear breiter
+bis sie am Ende, also an der Kante am Beckenrand, eine Breite von stolzen drei Metern erreicht,
+was es zum Missfallen des Schwimmwarts ermöglicht, mit mehreren Leuten gleichzeitig zu rutschen.
+
+\begin{enumerate}[resume]
+    \item[]
+        \begin{enumerate}[resume]
+            \item[(iii)]
+                \textit{Bestimmen Sie das Volumen des möglichen Stauraums unter der Annahme,
+                dass der Graph von $r$ auch gleichzeitig ideal die Decke dieses Raums darstellt,
+                und erläutern Sie Ihr Vorgehen.}
+        \end{enumerate}
+        \begin{flushright}
+            (9 + 3 + 6 Punkte)
+        \end{flushright}
+\end{enumerate}
+
+Die Form der Rutsche, die der renommierte Designer S. Altrock übernommen hat, hat leider ein Defizit:
+Jochen Jürgen muss nämlich in seinem Beruf leider täglich Kinder beobachten, die auf der Leiter ausrutschen.
+Da er dies durch seine scharfe Beobachtungsgabe auf die besondere Form zurückzuführen meint, plant er eine neue, gerade Leiter.
+Die Neigung soll exakt 80° betragen.
+
+\begin{enumerate}[resume]
+    \item[c)]
+        \begin{enumerate}
+            \item[(i)]
+                \textit{Ermitteln Sie eine Funktionsgleichung der Geraden $l$,
+                die in Relation zu den bereits gegebenen Graphen die neue Leiter modelliert.}
+            \item[(ii)]
+                \textit{Bestimmen Sie die Länge der Leiter.}
+        \end{enumerate}
+        \begin{flushright}
+            (5 + 2 Punkte)
+        \end{flushright}
+\end{enumerate}
+
+S. Altrock hat sich zu Beginn seiner Entwicklung der Rutsche die Kurvenschar
+
+$$f_{a}(x)=2\cdot a\cdot ln(x)-0,2x,a>0,x\in \mathbb{R}$$
+
+organisiert, um Inspirationen für den Rutschenverlauf zu erhalten, welche schlussendlich auch zielführend waren für sein endgültiges Design der Bielfelder Rutsche (siehe dafür erneut die Funktion $r$). Zweck der erhaltenen Kurvenschar ist es, verschiedene Rutschvorgänge von zu $r$ ähnlich verlaufenden Rutschen zu modellieren. Auf der x-Achse wird hierbei die Zeit in Sekunden modelliert; die y-Achse zeigt die zurückgelegten Meter an. Die Kurvenschar wurde S. Altorck von der renommierten Rutschenfirma \textit{Rutschenwernick} bereitgestellt, zu jener er freundschaftlichen Kontakt pflegt. Der raffinierte Vorsitzende der Firma hat die Entwicklung dieser und weiterer Kurvenscharen veranlasst, um Steigung und Geschwindigkeit von Rutschen, die in der Planung sind, zu modellieren. Reibung und Gewicht des Rutschenden sollen hier erneut vernachlässigt werden.
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+                        axis lines = middle,  
+                        xlabel = $x$, ylabel = $y$, 
+                        xmin=-1, xmax=20.5,            
+                        ymin=-3, ymax=5,        ]
+            \addplot [domain=0.01:40, samples=100, color=blue]{2*ln(x)-0.2*x};
+            \addlegendentry{$f_{1}(a)$}
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+\begin{enumerate}
+    \item[d)]
+        \begin{enumerate}
+            \item[(i)]
+                \textit{Erläutern Sie anhand des abgebildeten Graphen von $f_{1}(a)$, inwiefern die Funktion $f_{1}(a)$ den Rutschvorgang einer auf $r$ rutschenden Person modelliert. }
+            \item[(ii)]
+                \textit{Geben Sie begründet ein im Sachzusammenhang sinnvolles Intervall aus $f_{1}(a)$ an, welches den Rutschvorgang auf $r$ modelliert. (Hinweis: Es sind keine genauen Werte erforderlich. Von Uneinstimmigkkeiten in Funktionswerten der betrachteten Funktionen soll abgesehen werden.)}
+        \end{enumerate}
+        \begin{flushright}
+            (2 + 2 Punkte)
+        \end{flushright}
+\end{enumerate}
+
+\begin{enumerate}
+    \item[e)]
+        \textit{Bestimmen Sie rechnerisch die durchschnittliche Änderungsrate der Geschwindigkeit eines Rutschenden auf einer Rutsche, welche exakt nach $f_{1}(a)$ modelliert wurde.}
+        \begin{flushright}
+            (4 Punkte)
+        \end{flushright}
+\end{enumerate}
+
+
+%- hochpunktfunktion
+%- behauptung testen rutschgeschwindigkeit
+%- beschleunigung
+
+
+\end{document}
+
